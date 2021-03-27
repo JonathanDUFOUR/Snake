@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:34:13 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/26 19:26:03 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:02:08 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	displayScore(int score)
 {
-	std::cout << "       score: " << score;
+	std::cout << "       score: " << score << "    ";
 }
