@@ -6,39 +6,40 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:03:56 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/27 00:26:32 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/03/29 18:05:43 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <conio.h>
 #include "game.hpp"
 
 int	input(e_directions &dir)
 {
-	if (_kbhit())
+	int	ch;
+
+	ch = getch();
+	if (ch == 'w')
 	{
-		if (getch() == 'q')
-			return (QUIT);
-		getch();
-		switch (getch())
-		{
-			case 'A':
-				if (dir == RIGHT || dir == LEFT || dir == STOP)
-					dir = UP;
-				break ;
-			case 'B':
-				if (dir == RIGHT || dir == LEFT || dir == STOP)
-					dir = DOWN;
-				break ;
-			case 'C':
-				if (dir == UP || dir == DOWN || dir == STOP)
-					dir = RIGHT;
-				break ;
-			case 'D':
-				if (dir == UP || dir == DOWN || dir == STOP)
-					dir = LEFT;
-				break ;
-		}
+		if (dir == RIGHT || dir == LEFT || dir == STOP)
+			dir = UP;
 	}
+	else if (ch == 's')
+	{
+		if (dir == RIGHT || dir == LEFT || dir == STOP)
+			dir = DOWN;
+	}
+	else if (ch == 'd')
+	{
+		if (dir == UP || dir == DOWN || dir == STOP)
+			dir = RIGHT;
+	}
+	else if (ch == 'a')
+	{
+		if (dir == UP || dir == DOWN || dir == STOP)
+			dir = LEFT;
+	}
+	else if (ch == 'p')
+		return (PAUSE);
+	else if (ch == 'q')
+		return (QUIT);
 	return (CONTINUE);
 }

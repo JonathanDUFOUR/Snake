@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 21:34:54 by jodufour          #+#    #+#              #
-#    Updated: 2021/03/26 22:30:46 by jodufour         ###   ########.fr        #
+#    Updated: 2021/03/29 18:22:19 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,26 +26,34 @@ CLASSES	=	\
 			fruit.cpp
 
 SRCS	=	\
-			${CLASSES}			\
-			main.cpp			\
-			draw.cpp			\
-			input.cpp			\
-			setup.cpp			\
-			update.cpp			\
-			displayScore.cpp	\
-			cellAvailable.cpp	\
-			rdmSpawnPlayer.cpp	\
-			rdmSpawnFruit.cpp
+			${CLASSES}				\
+			main.cpp				\
+			draw.cpp				\
+			pause.cpp				\
+			input.cpp				\
+			setup.cpp				\
+			update.cpp				\
+			displayScore.cpp		\
+			cellAvailable.cpp		\
+			rdmSpawnPlayer.cpp		\
+			rdmSpawnFruit.cpp		\
+			drawSnakeCell.cpp		\
+			drawFruitCell.cpp		\
+			drawEmptyCell.cpp		\
+			drawLeftWallCell.cpp	\
+			drawRightWallCell.cpp	\
+			drawHorizontalWall.cpp	\
 
 OBJS	:=	${SRCS:.cpp=.o}
 OBJS	:=	${addprefix ${OBJD}, ${OBJS}}
 
 CPPFLAGS	=	-Wextra -Wall -I ${INCLUDE} -I ${CLASSD}
+LDFLAGS		=	-lncurses
 
 all:	${NAME}
 
 ${NAME}:	${OBJS}
-	${LINKER} ${NAME} ${OBJS}
+	${LINKER} ${NAME} ${LDFLAGS} ${OBJS}
 
 ${OBJD}%.o:	${SRCD}%.cpp
 	${MAKEDIR} ${OBJD}

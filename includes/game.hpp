@@ -6,27 +6,43 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:37:26 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/26 23:53:04 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/03/29 18:23:16 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 # include <iostream>
-# include <chrono>
-# include <thread>
+# include <ncurses.h>
+# include <string>
 # include "snake.hpp"
 # include "fruit.hpp"
 
 # define WIDTH 40
-# define HEIGHT 40
+# define HEIGHT 30
 
 # define MAX_SIZE 2048
+
+enum	e_std_fd
+{
+	STDIN,
+	STDOUT,
+	STDERR
+};
+
+enum	e_lements
+{
+	EMPTY = 1,
+	SNAKE,
+	WALL,
+	FRUIT
+};
 
 enum	e_ret_codes
 {
 	SUCCESS,
 	QUIT,
+	PAUSE,
 	CONTINUE
 };
 
@@ -45,9 +61,16 @@ void	setup(	bool &gameOver,
 				snake player[MAX_SIZE],
 				fruit &fruit,
 				int &score);
+void	pause(void);
 void	draw(	snake player[MAX_SIZE],
 				fruit fruit,
 				int score);
+void	drawHorizontalWall(void);
+void	drawLeftWallCell(void);
+void	drawSnakeCell(void);
+void	drawFruitCell(void);
+void	drawEmptyCell(void);
+void	drawRightWallCell(void);
 void	displayScore(int score);
 void	update(	e_directions dir,
 				bool &gameOver,

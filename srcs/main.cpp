@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:45:02 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/27 00:59:57 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/03/29 18:28:07 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,28 @@ int	main(void)
 	snake						player[MAX_SIZE];
 	fruit						fruit;
 	e_directions				dir;
-	std::chrono::milliseconds	timespan(42);
+	int							ret;
 
+	initscr();
+	if (has_colors() == FALSE)
+	{
+		endwin();
+		std::cout << "Your terminal does not support color" << std::endl;
+		return (0);
+	}
 	setup(gameOver, dir, player, fruit, score);
 	while (!gameOver && score < MAX_SIZE)
 	{
 		draw(player, fruit, score);
-		if (input(dir) == QUIT)
+		ret = input(dir);
+		if (ret == QUIT)
 			break ;
+		if (ret == PAUSE)
+			pause();
 		update(dir, gameOver, score, player, fruit);
-		std::this_thread::sleep_for(timespan);
+		napms(420 / (score + 1));
+		refresh();
 	}
+	endwin();
 	return (SUCCESS);
 }
