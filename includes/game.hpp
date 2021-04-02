@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:37:26 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/29 18:23:16 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/04/02 23:47:17 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 # include <iostream>
 # include <ncurses.h>
 # include <string>
-# include "snake.hpp"
-# include "fruit.hpp"
+# include "class/snake.hpp"
+# include "class/fruit.hpp"
 
 # define WIDTH 40
 # define HEIGHT 30

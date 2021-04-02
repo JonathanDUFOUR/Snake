@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 21:34:54 by jodufour          #+#    #+#              #
-#    Updated: 2021/03/29 18:22:19 by jodufour         ###   ########.fr        #
+#    Updated: 2021/04/02 23:47:07 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ SRCS	=	\
 OBJS	:=	${SRCS:.cpp=.o}
 OBJS	:=	${addprefix ${OBJD}, ${OBJS}}
 
-CPPFLAGS	=	-Wextra -Wall -I ${INCLUDE} -I ${CLASSD}
+CPPFLAGS	=	-Wextra -Wall -I ${INCLUDE}
 LDFLAGS		=	-lncurses
 
 all:	${NAME}
