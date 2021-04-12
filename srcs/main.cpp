@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:45:02 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/29 18:28:07 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/04/12 10:42:56 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(void)
 		if (ret == PAUSE)
 			pause();
 		update(dir, gameOver, score, player, fruit);
-		napms(420 / (score + 1));
+		napms(100 - score);
 		refresh();
 	}
 	endwin();

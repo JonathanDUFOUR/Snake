@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:05:53 by jodufour          #+#    #+#             */
-/*   Updated: 2021/04/12 10:27:49 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/04/12 10:34:59 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	setup(	bool &gameOver,
 	rdmSpawnFruit(player, fruit);
 	score = 0;
 	start_color();
-	init_pair(SNAKE, COLOR_GREEN, COLOR_BLACK);
-	init_pair(WALL, COLOR_YELLOW, COLOR_BLACK);
-	init_pair(FRUIT, COLOR_RED, COLOR_BLACK);
+	init_pair(SNAKE, COLOR_GREEN, COLOR_GREEN);
+	init_pair(WALL, COLOR_YELLOW, COLOR_YELLOW);
+	init_pair(FRUIT, COLOR_RED, COLOR_RED);
 	init_pair(EMPTY, COLOR_BLACK, COLOR_BLACK);
 	curs_set(0);
 	cbreak();
