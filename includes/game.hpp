@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:37:26 by jodufour          #+#    #+#             */
-/*   Updated: 2021/04/02 23:47:17 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/04/12 13:27:43 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "class/snake.hpp"
 # include "class/fruit.hpp"
 
-# define WIDTH 40
+# define WIDTH 60
 # define HEIGHT 30
 
 # define MAX_SIZE 2048
@@ -35,7 +35,8 @@ enum	e_lements
 	EMPTY = 1,
 	SNAKE,
 	WALL,
-	FRUIT
+	FRUIT,
+	GAMEOVER
 };
 
 enum	e_ret_codes
@@ -79,4 +80,5 @@ void	update(	e_directions dir,
 				fruit &fruit);
 void	rdmSpawnPlayer(snake player[MAX_SIZE]);
 void	rdmSpawnFruit(snake player[MAX_SIZE], fruit &fruit);
+void	printGameOver(void);
 bool	cellAvailable(snake player[MAX_SIZE], fruit fruit);

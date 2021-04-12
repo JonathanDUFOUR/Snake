@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/25 21:34:54 by jodufour          #+#    #+#              #
-#    Updated: 2021/04/02 23:47:07 by jodufour         ###   ########.fr        #
+#    Updated: 2021/04/12 13:26:12 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,14 +40,16 @@ SRCS	=	\
 			drawSnakeCell.cpp		\
 			drawFruitCell.cpp		\
 			drawEmptyCell.cpp		\
+			printGameOver.cpp		\
 			drawLeftWallCell.cpp	\
 			drawRightWallCell.cpp	\
 			drawHorizontalWall.cpp	\
 
 OBJS	:=	${SRCS:.cpp=.o}
 OBJS	:=	${addprefix ${OBJD}, ${OBJS}}
+DEPS	:=	${OBJS:.o=.d}
 
-CPPFLAGS	=	-Wextra -Wall -I ${INCLUDE}
+CPPFLAGS	=	-Wextra -Wall -I ${INCLUDE} -MMD
 LDFLAGS		=	-lncurses
 
 all:	${NAME}
@@ -55,13 +57,15 @@ all:	${NAME}
 ${NAME}:	${OBJS}
 	${LINKER} ${NAME} ${LDFLAGS} ${OBJS}
 
+-include ${DEPS}
+
 ${OBJD}%.o:	${SRCD}%.cpp
 	${MAKEDIR} ${OBJD}
-	${CC} $@ ${CPPFLAGS} $^
+	${CC} $@ ${CPPFLAGS} $<
 	
 ${OBJD}%.o:	${CLASSD}%.cpp
 	${MAKEDIR} ${OBJD}
-	${CC} $@ ${CPPFLAGS} $^
+	${CC} $@ ${CPPFLAGS} $<
 
 clean:
 	${RM} ${OBJD}

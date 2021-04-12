@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:05:53 by jodufour          #+#    #+#             */
-/*   Updated: 2021/04/12 10:34:59 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/04/12 10:57:12 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	setup(	bool &gameOver,
 	init_pair(WALL, COLOR_YELLOW, COLOR_YELLOW);
 	init_pair(FRUIT, COLOR_RED, COLOR_RED);
 	init_pair(EMPTY, COLOR_BLACK, COLOR_BLACK);
+	init_pair(GAMEOVER, COLOR_MAGENTA, COLOR_MAGENTA);
 	curs_set(0);
 	cbreak();
 	noecho();

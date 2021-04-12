@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 21:45:02 by jodufour          #+#    #+#             */
-/*   Updated: 2021/04/12 10:42:56 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/04/12 13:28:04 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int	main(void)
 		napms(100 - score);
 		refresh();
 	}
+	if (gameOver)
+		printGameOver();
 	endwin();
 	return (SUCCESS);
 }
