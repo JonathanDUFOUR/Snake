@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:05:53 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/29 17:54:26 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/04/12 10:27:49 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ void	setup(	bool &gameOver,
 	noecho();
 	scrollok(stdscr, TRUE);
 	nodelay(stdscr, TRUE);
+	keypad(stdscr, TRUE);
 }

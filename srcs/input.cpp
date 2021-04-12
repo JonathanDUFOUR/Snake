@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 05:03:56 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/30 11:54:12 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/04/12 10:32:36 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@ int	input(e_directions &dir)
 	int	ch;
 
 	ch = getch();
-	if (ch == 'w' || ch == '8')
+	if (ch == KEY_UP)
 	{
 		if (dir == RIGHT || dir == LEFT || dir == STOP)
 			dir = UP;
 	}
-	else if (ch == 's' || ch == '5')
+	else if (ch == KEY_DOWN)
 	{
 		if (dir == RIGHT || dir == LEFT || dir == STOP)
 			dir = DOWN;
 	}
-	else if (ch == 'd' || ch == '6')
+	else if (ch == KEY_RIGHT)
 	{
 		if (dir == UP || dir == DOWN || dir == STOP)
 			dir = RIGHT;
 	}
-	else if (ch == 'a' || ch == '4')
+	else if (ch == KEY_LEFT)
 	{
 		if (dir == UP || dir == DOWN || dir == STOP)
 			dir = LEFT;
