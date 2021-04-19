@@ -12,7 +12,7 @@ sudo apt install git g++ libncurses5-dev make
 
 Download + Install
 ```
-git clone git@github.com/JonathanDUFOUR/Snake.git
+git clone https://github.com/JonathanDUFOUR/Snake.git
 cd Snake
 make
 ./snake
