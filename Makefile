@@ -12,7 +12,7 @@
 
 NAME	=	snake
 CC		=	g++ -c -o
-LINKER	=	g++ -o
+LINKER	=	g++
 MAKEDIR	=	mkdir -p
 RM		=	rm -rf
 
@@ -55,7 +55,7 @@ LDFLAGS		=	-lncurses
 all:	${NAME}
 
 ${NAME}:	${OBJS}
-	${LINKER} ${NAME} ${LDFLAGS} ${OBJS}
+	${LINKER} $^ ${LDFLAGS} ${OUTPUT_OPTION}
 
 -include ${DEPS}
 
